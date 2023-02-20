@@ -1,0 +1,93 @@
+/* 1. Use a more-intuitive box-sizing model. */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+/* 2. Remove default margin */
+* {
+margin: 0;
+}
+
+/* 3. Allow percentage-based heights in the application */
+html, body {
+height: 100%;
+}
+
+/* Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering*/
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+
+/* 7. Remove built-in form typography styles */
+input, button, textarea, select {
+font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+/* 9. Create a root stacking context */
+#root, #__next {
+isolation: isolate;
+}
+
+/* ------------------------------ */
+.calculator-grid {
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center; /*aligns the grid in the center of the grid container*/
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /* minmax(7rem, auto) is for first row. PC: we want the first row to be min 7rem, or expand automatically to fill the full height of the content*/
+}
+
+.calculator-grid > button { /* child selector */
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255,.75);
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgba(255,255,255,.9);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+
+.output {
+    grid-column: 1/-1;
+    background-color: rgba(0,0,0,.75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255,255,255,.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
