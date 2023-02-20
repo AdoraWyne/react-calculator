@@ -47,6 +47,7 @@ isolation: isolate;
 .calculator-grid {
     display: grid;
     margin-top: 2rem;
+    justify-content: center; /*aligns the grid in the center of the grid container*/
     grid-template-columns: repeat(4, 6rem);
     grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /* minmax(7rem, auto) is for first row. PC: we want the first row to be min 7rem, or expand automatically to fill the full height of the content*/
 }
