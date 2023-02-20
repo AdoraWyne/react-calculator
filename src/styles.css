@@ -48,7 +48,20 @@ isolation: isolate;
     display: grid;
     margin-top: 2rem;
     grid-template-columns: repeat(4, 6rem);
-    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /* minmax(7rem, auto) is for first row. PC: we want the first row to be min 7rem, or expand automatically to fill the full height of the content*/
+}
+
+.calculator-grid > button { /* child selector */
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255,.75);
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgba(255,255,255,.9);
 }
 
 .span-two {
